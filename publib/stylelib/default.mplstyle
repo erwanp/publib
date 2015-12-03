@@ -49,9 +49,9 @@ ytick.minor.size: 3.0
 ytick.minor.width: 1.0
 
 figure.subplot.left: 0.15
-figure.subplot.right: 0.85
+figure.subplot.right: 0.89
 figure.subplot.bottom: 0.17
-figure.subplot.top: 0.89
+figure.subplot.top: 0.85
 
 axes.labelsize: 16
 axes.titlesize: 18

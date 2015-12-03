@@ -3,4 +3,4 @@
 publib
 """
 
-from publib import set_style, buff_style
+from .publib import set_style, buff_style

@@ -7,14 +7,19 @@ Produce publication-level quality images on top of Matplotlib
 For similar librairies, see seaborn, which also add neat high-end API to 
 Matplotlib function calls.  
 
-Use
 --------
+Use
 >>> import numpy as np
 >>> import matplotlib.pyplot as plt
->>> import publib as plb
+>>> import publib
 >>> a = np.linspace(0,6.28)
 >>> plt.plot(a,np.cos(a))
+>>> plt.show()
 
+>>> publib.set_style('article')
+>>> plt.plot(a,a**2)
+>>> publib.buff_style('article')
+>>> plt.show()
 
 """
 
@@ -42,13 +47,12 @@ def set_style(style='default'):
 
     '''
     
-#    mpl.style.use(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-#                                'stylelib',style+'.mplstyle'))
-    mpl.style.use(os.path.join('.\stylelib',style+'.mplstyle'))
+    mpl.style.use(os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                'stylelib',style+'.mplstyle'))
     
     return
 
-def buff_style(ax=None,style='default',**kwargs):
+def buff_style(style='default',ax=None,**kwargs):
     ''' 
     Add an extra formatting layer to an axe, that couldn't be changed directly 
     in matplotlib.rcParams or with styles. Apply this function to every axe 
@@ -65,7 +69,7 @@ def buff_style(ax=None,style='default',**kwargs):
     Examples
     --------
     plb.set_style('poster')
-    ax = plt.plot(a,np.cos(a))
+    plt.plot(a,np.cos(a))
     plb.buff_style('poster')    
     
     
@@ -174,7 +178,8 @@ def _test():
         
         # The two functions to apply to format a graph correctly
         set_style('default')
-        example()
+        ax=example()
+        buff_style('default')
         
     return None
 
