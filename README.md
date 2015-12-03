@@ -7,8 +7,10 @@ Matplotlib function calls.
 
 --------
 Use
+```
 	>>> import numpy as np
 	>>> import matplotlib.pyplot as plt
 	>>> import publib as plb
 	>>> a = np.linspace(0,6.28)
 	>>> plt.plot(a,np.cos(a))
+```
