@@ -1,0 +1,61 @@
+# Author: Erwan Pannier
+# A Matplotlib style to provide publication-level quality images
+
+axes.color_cycle: 5DA5DA, FAA43A, 60BD68, F17CB0, B2912F, B276B2, DECF3F, F15854, 4D4D4D								   
+axes.formatter.use_mathtext: true
+axes.grid: false
+figure.dpi: 80.0
+figure.facecolor: white
+
+grid.alpha: 0.2
+grid.color: 0.7
+grid.linestyle: solid
+grid.linewidth: 0.5
+
+legend.borderpad: 0.4
+legend.frameon: true
+legend.labelspacing: 0.1
+legend.numpoints: 1
+
+lines.dash_joinstyle: round
+lines.linewidth: 2.0
+lines.markeredgewidth: 1.0
+lines.solid_capstyle: round
+lines.solid_joinstyle: round
+
+patch.edgecolor: 0.5
+patch.facecolor: 0.75
+
+savefig.bbox: tight
+savefig.dpi: 300.0
+savefig.format: svg
+savefig.frameon: true
+
+#text.usetex: true
+
+xtick.direction: out
+xtick.major.pad: 4.0
+xtick.major.size: 6.0
+xtick.major.width: 1.0
+xtick.minor.pad: 3.0
+xtick.minor.size: 3.0
+xtick.minor.width: 1.0
+ytick.direction: out
+ytick.major.pad: 4.0
+ytick.major.size: 6.0
+ytick.major.width: 1.0
+ytick.minor.pad: 3.0
+ytick.minor.size: 3.0
+ytick.minor.width: 1.0
+
+figure.subplot.left: 0.15
+figure.subplot.right: 0.85
+figure.subplot.bottom: 0.17
+figure.subplot.top: 0.89
+
+axes.labelsize: 16
+axes.titlesize: 18
+font.size: 14
+legend.fontsize: 16
+xtick.labelsize: 16
+ytick.labelsize: 16
