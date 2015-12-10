@@ -9,7 +9,7 @@ figure.facecolor: white
 
 grid.alpha: 0.2
 grid.color: 0.7
-grid.linestyle: solid
+grid.linestyle: --
 grid.linewidth: 0.5
 
 legend.borderpad: 0.4
@@ -28,7 +28,7 @@ patch.facecolor: 0.75
 
 savefig.bbox: tight
 savefig.dpi: 300.0
-savefig.format: svg
+savefig.format: pdf
 savefig.frameon: true
 
 #text.usetex: true
@@ -48,14 +48,14 @@ ytick.minor.pad: 3.0
 ytick.minor.size: 3.0
 ytick.minor.width: 1.0
 
-figure.subplot.left: 0.15
-figure.subplot.right: 0.89
-figure.subplot.bottom: 0.17
-figure.subplot.top: 0.85
+figure.subplot.top: 0.88
+figure.subplot.bottom: 0.15
+figure.subplot.left: 0.13
+figure.subplot.right: 0.90
 
-axes.labelsize: 16
-axes.titlesize: 18
-font.size: 14
-legend.fontsize: 16
-xtick.labelsize: 16
-ytick.labelsize: 16
+axes.labelsize: 18
+axes.titlesize: 20
+font.size: 16
+legend.fontsize: 18
+xtick.labelsize: 18
+ytick.labelsize: 18

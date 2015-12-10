@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='publib',
-      version='0.1.1',
+      version='0.1.2',
       description='Produce publication-level quality images on top of Matplotlib',
 	  long_description='Some predefined styles',
       url='github.com/rainwear/publib',
