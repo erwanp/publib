@@ -22,8 +22,9 @@ Matplotlib function calls.
     - remove the spines
     - turn the legend draggable by default
 
-## Examples
-```import numpy as np
+### Examples
+```
+import numpy as np
 import matplotlib.pyplot as plt
 import publib
 a = np.linspace(0,6.28)
