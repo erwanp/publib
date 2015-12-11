@@ -1,10 +1,11 @@
 from setuptools import setup
+import codecs
 
 setup(name='publib',
-      version='0.1.2',
+      version='0.1.4',
       description='Produce publication-level quality images on top of Matplotlib',
-	  long_description='Some predefined styles',
-      url='github.com/rainwear/publib',
+	  long_description=codecs.open('README.rst').read()
+      url='https://github.com/rainwear/publib',
       author='Erwan Pannier',
       author_email='erwan.pannier@gmail.com',
       license='BSD-3',

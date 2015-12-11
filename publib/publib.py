@@ -144,7 +144,7 @@ def buff_style(style='default',ax=None,**kwargs):
     if params['draggable_legend']:
         l = ax.get_legend()
         if not l is None:
-            l.draggable()
+            l.draggable(True)
     
     return
 

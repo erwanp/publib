@@ -12,7 +12,7 @@ legend.fontsize: 20
 xtick.labelsize: 24
 ytick.labelsize: 24
 
-figure.subplot.top: 0.87
-figure.subplot.bottom: 0.18
-figure.subplot.left: 0.17
+figure.subplot.top: 0.82
+figure.subplot.bottom: 0.17
+figure.subplot.left: 0.20
 figure.subplot.right: 0.90
