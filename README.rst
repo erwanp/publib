@@ -10,15 +10,17 @@ Matplotlib function calls.
 Use
 ===
 
-1. At the beginning of the script, call:
+At the beginning of the script, call:
 
-.. code:: python
-	set_style()
+.. code-block:: python
+
+    set_style()
 	
 After each new axe is plotted, call:
 
-.. code:: python
-	buff_style()
+.. code-block:: python
+
+    buff_style()
 
 Note that importing publib will already load the default style. 
 
@@ -38,6 +40,7 @@ Examples
 ========
 
 .. code:: python
+
 	#!/usr/bin/env python
 	import numpy as np
 	import matplotlib.pyplot as plt
