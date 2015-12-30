@@ -12,7 +12,7 @@ Matplotlib function calls.
 Use
 
     Call set_style() at the beginning of the script
-    Call buff_style() after each new axe is plotted
+    Call fix_style() after each new axe is plotted
     
     Note that importing publib will already load the default style. 
 
@@ -20,7 +20,7 @@ Use
     set_style()
     
     Because some matplotlib parameters cannot be changed before the lines are 
-    plotted, they are called through the function buff_style() which:
+    plotted, they are called through the function fix_style() which:
     - changes the minor ticks
     - remove the spines
     - turn the legend draggable by default
@@ -36,7 +36,7 @@ Examples
 
 >>> publib.set_style('article')
 >>> plt.plot(a,a**2)
->>> publib.buff_style('article')
+>>> publib.fix_style('article')
 >>> plt.show()
 
 """
@@ -46,23 +46,25 @@ import matplotlib as mpl
 import os
 
 style_params={
-    'default':{'clean_spines':True,
-               'draggable_legend':True},
+    'basic':{'clean_spines':True,
+               'draggable_legend':True,
+               'tight_layout':True
+               },
     'article':{'clean_spines':False,
-               'draggable_legend':True},
-    'poster': {'clean_spines':True,
-               'draggable_legend':True},
+               },
+    'poster':{},
+    'B&W':{}
     }
 
-def set_style(style='default'):
+def set_style(style='basic'):
     ''' Changes Matplotlib basic style to produce high quality graphs. Call 
     this function at the beginning of your script. You can even further improve
-    graphs with a call to buff_style at the end of your script.
+    graphs with a call to fix_style at the end of your script.
 
     Parameters
     ----------    
     style: string
-        'default', 'article', 'poster'
+        'basic', 'article', 'poster', 'B&W'
     
     Examples
     --------
@@ -70,22 +72,36 @@ def set_style(style='default'):
 
     '''
     
-    if not style in style_params.keys():
-        raise ValueError('Please pick a style from the list available:',style_params.keys())
+    if type(style)==str:
+        style = [style]
+
+    # Add basic style as the first style
+    if style[0] != 'basic':
+        style = ['basic']+style
     
-    # Use default as a base for any style:
-    if style!='default': 
-        stl = ['default',style]
-    else:
-        stl = [style]
+    # Apply all styles
+    for s in style:
+            
+        if not s in style_params.keys():
+            raise ValueError('Please pick a style from the list available:',style_params.keys())
         
-    stl = map(_get_style,stl)
+        _set_style(s)
+        
+def _set_style(style):
+    
+    stl = _get_style(style)
         
     mpl.style.use(stl)
         
     return
 
-def buff_style(style='default',ax=None,**kwargs):
+def buff_style(*args):
+    ''' Deprecated. Use fix_style '''
+    from warnings import warn
+    warn('buff_style deprecated. Please use fix_style')
+    return fix_style(*args)
+
+def fix_style(style='basic',ax=None,**kwargs):
     ''' 
     Add an extra formatting layer to an axe, that couldn't be changed directly 
     in matplotlib.rcParams or with styles. Apply this function to every axe 
@@ -95,7 +111,8 @@ def buff_style(style='default',ax=None,**kwargs):
     ----------    
     ax: a matplotlib axe. 
         If None, the last axe generated is used 
-    style: string
+    style: string or list of string
+        ['basic', 'article', 'poster', 'B&W'] 
         one of the styles previously defined. It should match the style you 
         chose in set_style but nothing forces you to.
     kwargs: dict
@@ -105,12 +122,32 @@ def buff_style(style='default',ax=None,**kwargs):
     --------
     plb.set_style('poster')
     plt.plot(a,np.cos(a))
-    plb.buff_style('poster',{'draggable_legend':False})    
-    
+    plb.fix_style('poster',{'draggable_legend':False})    
     
     '''
     
-    params = style_params[style]
+    if type(style)==str:
+        style = [style]
+        
+    # Apply all styles
+    for s in style:
+            
+        if not s in style_params.keys():
+            raise ValueError('Please pick a style from the list available:',style_params.keys())
+        
+    _fix_style(style,ax,**kwargs)
+        
+def _fix_style(styles,ax=None,**kwargs):
+
+    # Start with basic params
+    params = style_params['basic']
+    
+    # Apply all styles params
+    for s in styles:
+        for p,v in style_params[s].items():
+            params[p] = v
+
+    # User defined params:
     for k in kwargs:
         params[k] = kwargs[k]
     
@@ -125,7 +162,12 @@ def buff_style(style='default',ax=None,**kwargs):
         ax.xaxis.set_ticks_position('bottom')
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
-        
+       
+    # Tight layout
+    if params['tight_layout']:
+        plt.tight_layout()
+    
+    # Labelpads, offsets, etc.
     ax.xaxis.labelpad = 10
     ax.yaxis.labelpad = 10
     
@@ -154,7 +196,7 @@ def _get_style(style):
                                 'stylelib',style+'.mplstyle')
 
 
-set_style('default')        # whenever publib is imported
+set_style('basic')        # whenever publib is imported
 
 # %% Test routines
 
@@ -230,16 +272,20 @@ def _test():
         mpl.rcdefaults()
         
         set_style()
-        example('default',seed)
-        buff_style()
+        example('basic',seed)
+        fix_style()
         
         set_style('article')
         example('article',seed)
-        buff_style('article')
+        fix_style('article')
+        
+        set_style(['article','B&W'])
+        example('article',seed)
+        fix_style(['article','B&W'])
 
         set_style('poster')
         example('poster',seed)
-        buff_style('poster')
+        fix_style('poster')
 
         # Default plot 
         mpl.style.use('classic')

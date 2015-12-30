@@ -1,0 +1,4 @@
+# Author: Erwan Pannier
+# A Matplotlib style to provide publication-level quality images
+
+axes.color_cycle: k

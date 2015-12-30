@@ -20,7 +20,7 @@ After each new axe is plotted, call:
 
 .. code-block:: python
 
-    buff_style()
+    fix_style()
 
 Note that importing publib will already load the default style. 
 
@@ -28,7 +28,7 @@ A couple more styles ('poster', 'article') can be selected with the function
 set_style()
 
 Because some matplotlib parameters cannot be changed before the lines are 
-plotted, they are called through the function buff_style() which:
+plotted, they are called through the function fix_style() which:
 
 - changes the minor ticks
 
@@ -51,5 +51,5 @@ Examples
 
 	publib.set_style('article')
 	plt.plot(a,a**2)
-	publib.buff_style('article')
+	publib.fix_style('article')
 	plt.show()
