@@ -1,0 +1,5 @@
+# Author: Erwan Pannier
+# A Matplotlib style to provide publication-level quality images
+# 'small': used for Jupyter Notebook for instance
+
+savefig.dpi: 72

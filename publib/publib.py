@@ -11,33 +11,34 @@ Matplotlib function calls.
 --------
 Use
 
-    Call set_style() at the beginning of the script
-    Call fix_style() after each new axe is plotted
-    
-    Note that importing publib will already load the default style. 
+Call set_style() at the beginning of the script
+Call fix_style() after each new axe is plotted
 
-    A couple more styles ('poster', 'article') can be selected with the function
-    set_style()
-    
-    Because some matplotlib parameters cannot be changed before the lines are 
-    plotted, they are called through the function fix_style() which:
-    - changes the minor ticks
-    - remove the spines
-    - turn the legend draggable by default
+Note that importing publib will already load the default style. 
+
+A couple more styles ('poster', 'article') can be selected with the function
+set_style()
+
+Because some matplotlib parameters cannot be changed before the lines are 
+plotted, they are called through the function fix_style() which:
+- changes the minor ticks
+- remove the spines
+- turn the legend draggable by default
 
 --------
 Examples
->>> import numpy as np
->>> import matplotlib.pyplot as plt
->>> import publib
->>> a = np.linspace(0,6.28)
->>> plt.plot(a,np.cos(a))   # plotted by publib 'default' style
->>> plt.show()
 
->>> publib.set_style('article')
->>> plt.plot(a,a**2)
->>> publib.fix_style('article')
->>> plt.show()
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import publib
+    a = np.linspace(0,6.28)
+    plt.plot(a,np.cos(a))   # plotted by publib 'default' style
+    plt.show()
+    
+    publib.set_style('article')
+    plt.plot(a,a**2)
+    publib.fix_style('article')
+    plt.show()
 
 """
 
@@ -81,16 +82,15 @@ def set_style(style='basic'):
     
     # Apply all styles
     for s in style:
-            
-        if not s in style_params.keys():
-            raise ValueError('Please pick a style from the list available:',style_params.keys())
-        
         _set_style(s)
         
 def _set_style(style):
     
     stl = _get_style(style)
-        
+
+    if not os.path.exists(stl):
+        raise ValueError('Please pick a style from the list available:',style_params.keys())
+    
     mpl.style.use(stl)
         
     return
