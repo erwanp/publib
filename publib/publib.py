@@ -45,6 +45,7 @@ Examples
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import os
+from warnings import warn
 
 style_params={
     'basic':{'clean_spines':True,
@@ -57,7 +58,7 @@ style_params={
     'B&W':{}
     }
 
-def set_style(style='basic'):
+def set_style(style='basic',**kwargs):
     ''' Changes Matplotlib basic style to produce high quality graphs. Call 
     this function at the beginning of your script. You can even further improve
     graphs with a call to fix_style at the end of your script.
@@ -67,14 +68,18 @@ def set_style(style='basic'):
     style: string
         'basic', 'article', 'poster', 'B&W'
     
+    kwargs: dict of rcParams
+        add Matplotlib rcParams    
+    
     Examples
     --------
-    >>> set_style("article")
+    >>> set_style('article')
+    
+    >>> set_style('poster',**{'lines.linewidth':2})
 
     '''
     
-    if type(style)==str:
-        style = [style]
+    style = _read_style(style)
 
     # Add basic style as the first style
     if style[0] != 'basic':
@@ -82,16 +87,22 @@ def set_style(style='basic'):
     
     # Apply all styles
     for s in style:
-        _set_style(s)
+        _set_style(s,**kwargs)
         
-def _set_style(style):
+def _set_style(style,**kwargs):
     
     stl = _get_style(style)
 
     if not os.path.exists(stl):
-        raise ValueError('Please pick a style from the list available:',style_params.keys())
-    
+#        avail = os.listdir()
+        ValueError('{0} is not a valid style. '.format(style)+
+                'Please pick a style from the list available:',style_params.keys())
+        return
+        
     mpl.style.use(stl)
+    
+    for k in kwargs:
+        mpl.rcParams[k] = kwargs[k]
         
     return
 
@@ -122,18 +133,20 @@ def fix_style(style='basic',ax=None,**kwargs):
     --------
     plb.set_style('poster')
     plt.plot(a,np.cos(a))
-    plb.fix_style('poster',{'draggable_legend':False})    
+    plb.fix_style('poster',**{'draggable_legend':False})    
     
     '''
     
-    if type(style)==str:
-        style = [style]
+    style = _read_style(style)
         
     # Apply all styles
     for s in style:
             
         if not s in style_params.keys():
-            raise ValueError('Please pick a style from the list available:',style_params.keys())
+            avail = [f.replace('.mplstyle','') for f in os.listdir(_get_lib()) if f.endswith('.mplstyle')]
+            raise ValueError('{0} is not a valid style. '.format(s)+
+                            'Please pick a style from the list available in '+
+                                '{0}: {1}'.format(_get_lib(),avail))
         
     _fix_style(style,ax,**kwargs)
         
@@ -190,22 +203,37 @@ def _fix_style(styles,ax=None,**kwargs):
     
     return
 
+def _read_style(style):
+    ''' Deal with different style format (str, list, tuple)'''
+    
+    if type(style)==str:
+        style = [style]
+    else:
+        style = list(style)
+            
+    return style
+
 def _get_style(style):
     ''' Get absolute path of style file '''
-    return os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                'stylelib',style+'.mplstyle')
+    return os.path.join(_get_lib(),'{0}.mplstyle'.format(style))
 
+def _get_lib():
+    ''' Get absolute path of styles '''
+    return os.path.join(os.path.dirname(os.path.realpath(__file__)),'stylelib')
+
+# %% On start-up
 
 set_style('basic')        # whenever publib is imported
 
+
 # %% Test routines
 
-def _test():
+def _test(**kwargs):
     ''' Note : for some reason using latex will also apply to the plot showing
     the default behaviour of matplotlib (it seems that this parameter
     is retroactive
     '''
-    
+
     import numpy as np
     import matplotlib.pyplot as plt
     
@@ -283,9 +311,9 @@ def _test():
         example('article',seed)
         fix_style(['article','B&W'])
 
-        set_style('poster')
+        set_style('poster',**{'lines.linewidth':5})
         example('poster',seed)
-        fix_style('poster')
+        fix_style('poster',**{'draggable_legend':False})
 
         # Default plot 
         mpl.style.use('classic')
