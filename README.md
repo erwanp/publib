@@ -70,7 +70,7 @@ plt.show()
 plt.savefig('mpl_default.png')
 ```
 
-![https://github.com/rainwear/publib/blob/master/docs/mpl_default.png](docs/mpl_default.png)
+![mpl_defaults.png](https://github.com/rainwear/publib/blob/master/docs/mpl_default.png)
 
 And now the same code with the two new lines calling the 
 publib functions
@@ -98,7 +98,7 @@ plt.show()
 plt.savefig('publib_article.png')
 ```
 
-![https://github.com/rainwear/publib/blob/master/docs/publib_article.png](docs/publib_article.png)
+![publib_article.png](https://github.com/rainwear/publib/blob/master/docs/publib_article.png)
 
 Run the _test() routine in publib.py for more examples. 
 
