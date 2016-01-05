@@ -46,11 +46,14 @@ are plotted, they are called through the function `fix_style()` which:
 ``` {.sourceCode .python}
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 ```
 
 A default Matplotlib plot:
 
 ``` {.sourceCode .python}
+mpl.rcdefaults()
+
 x = np.linspace(0,5,250)
 y = np.cos(x)**2+np.random.normal(scale=0.5,size=len(x))
 yav = np.cos(x)**2
@@ -64,6 +67,7 @@ plt.title('matplotlib')
 plt.legend(loc='upper left')
 plt.ylim((-1.5,3.5))
 plt.show()
+plt.savefig('mpl_default.png')
 ```
 
 ![https://github.com/rainwear/publib/blob/master/docs/mpl_default.png](docs/mpl_default.png)
@@ -87,11 +91,11 @@ plt.ylabel(r'$\cos^2 x$+noise')
 plt.title('article')
 plt.legend(loc='upper left')
 plt.ylim((-1.5,3.5))
-plt.show()
 
 fix_style('article')  # after the axe has been created
 
 plt.show()
+plt.savefig('publib_article.png')
 ```
 
 ![https://github.com/rainwear/publib/blob/master/docs/publib_article.png](docs/publib_article.png)
