@@ -13,6 +13,12 @@ For similar librairies, see
 [seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
 add neat high-end API to Matplotlib function calls.
 
+## Install
+
+```
+pip install publib
+```
+
 ## Use
 
 At the beginning of the script, call:
