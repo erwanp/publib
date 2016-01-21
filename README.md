@@ -7,7 +7,7 @@
 Produce publication-level quality images on top of Matplotlib, with a 
 simple call to couple functions at the start and end of your script. 
 
-[Project GitHub page](https://github.com/rainwear/publib)
+[Project GitHub page](https://github.com/erwanp/publib)
 
 For similar librairies, see
 [seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
@@ -70,7 +70,7 @@ plt.show()
 plt.savefig('mpl_default.png')
 ```
 
-![mpl_defaults.png](https://github.com/rainwear/publib/blob/master/docs/mpl_default.png)
+![mpl_defaults.png](https://github.com/erwanp/publib/blob/master/docs/mpl_default.png)
 
 And now the same code with the two new lines calling the 
 publib functions
@@ -98,14 +98,15 @@ plt.show()
 plt.savefig('publib_article.png')
 ```
 
-![publib_article.png](https://github.com/rainwear/publib/blob/master/docs/publib_article.png)
+![publib_article.png](https://github.com/erwanp/publib/blob/master/docs/publib_article.png)
 
 Run the _test() routine in publib.py for more examples. 
 
 
 ## Changes
 
-0.1.6 : improve Readme
-0.1.5 : changed those buff_style functions in fix_style 
+- 0.1.6 : improve Readme
+
+- 0.1.5 : changed those buff_style functions in fix_style 
 
 
