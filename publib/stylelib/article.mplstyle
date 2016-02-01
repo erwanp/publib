@@ -17,3 +17,7 @@ axes.grid: true
 #legend.fontsize: 10
 #xtick.labelsize: 8
 #ytick.labelsize: 8
+
+font.family: serif
+font.sans-serif     : Helvetica, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Avant Garde, sans-serif
+font.serif: Times, Times New Roman, Bitstream Vera Serif, DejaVu Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Palatino, Charter, serif
