@@ -11,12 +11,16 @@ legend.frameon: false
 
 axes.grid: true
 
+lines.markersize: 8.0
+
 #axes.labelsize: 10
 #axes.titlesize: 12
 #font.size: 10
 #legend.fontsize: 10
 #xtick.labelsize: 8
 #ytick.labelsize: 8
+
+errorbar.capsize: 5
 
 font.family: serif
 font.sans-serif     : Helvetica, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Avant Garde, sans-serif

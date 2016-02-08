@@ -111,6 +111,8 @@ Run the _test() routine in publib.py for more examples.
 
 ## Changes
 
+- 0.1.6 : default fonts to Times in article
+
 - 0.1.6 : improve Readme
 
 - 0.1.5 : changed those buff_style functions in fix_style 

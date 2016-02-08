@@ -50,13 +50,19 @@ from warnings import warn
 style_params={
     'basic':{'clean_spines':True,
                'draggable_legend':True,
-               'tight_layout':True
+               'tight_layout':True,
+               'labelpad':10,
                },
     'article':{'clean_spines':False,
+               },
+    'article_s':{'clean_spines':False,
+               'labelpad':5,
+               'spine_linewidth':0.5,
                },
     'poster':{},
     'B&W':{}
     }
+    
 
 def set_style(style='basic',**kwargs):
     ''' Changes Matplotlib basic style to produce high quality graphs. Call 
@@ -170,6 +176,10 @@ def _fix_style(styles,ax=None,**kwargs):
         except:
             raise ValueError('Please select an axis')
     
+    if 'spine_linewidth' in params.keys():
+        for spine in ['left', 'bottom','right','top']:
+            ax.spines[spine].set_linewidth(params['spine_linewidth'])
+    
     if params['clean_spines']:
         ax.yaxis.set_ticks_position('left')
         ax.xaxis.set_ticks_position('bottom')
@@ -181,8 +191,8 @@ def _fix_style(styles,ax=None,**kwargs):
         plt.tight_layout()
     
     # Labelpads, offsets, etc.
-    ax.xaxis.labelpad = 10
-    ax.yaxis.labelpad = 10
+    ax.xaxis.labelpad = params['labelpad']
+    ax.yaxis.labelpad = params['labelpad']
     
     titleoffset = 1.05
     ax.title.set_y(titleoffset)
@@ -307,9 +317,9 @@ def _test(**kwargs):
         example('article',seed)
         fix_style('article')
         
-        set_style(['article','B&W'])
-        example('article',seed)
-        fix_style(['article','B&W'])
+#        set_style(['article','B&W'])
+#        example('article',seed)
+#        fix_style(['article','B&W'])
 
         set_style('poster',**{'lines.linewidth':5})
         example('poster',seed)

@@ -1,0 +1,48 @@
+# Author: Erwan Pannier 
+# A Matplotlib style to provide publication-level quality images
+# Note: article should be built on top of default. When importing plotlib default is 
+# imported already. 
+
+
+figure.dpi: 160
+figure.figsize: 4,3
+
+
+axes.grid: true
+
+legend.borderpad: 0.2
+legend.frameon: false
+legend.labelspacing: 0.05
+legend.numpoints: 1
+
+grid.linewidth: 0.25
+lines.linewidth: 1.0
+lines.markeredgewidth: 0.5
+lines.markersize: 4.0
+
+xtick.direction: out
+xtick.major.pad: 2.0
+xtick.major.size: 3.0
+xtick.major.width: 0.5
+xtick.minor.pad: 1.5
+xtick.minor.size: 1.5
+xtick.minor.width: 0.5
+ytick.direction: out
+ytick.major.pad: 2.0
+ytick.major.size: 3.0
+ytick.major.width: 0.5
+ytick.minor.pad: 1.5
+ytick.minor.size: 1.5
+ytick.minor.width: 0.5
+#errorbar.capsize : 5
+
+axes.labelsize: 10
+axes.titlesize: 12
+font.size: 10
+legend.fontsize: 10
+xtick.labelsize: 8
+ytick.labelsize: 8
+
+font.family: serif
+font.sans-serif     : Helvetica, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Avant Garde, sans-serif
+font.serif: Times, Times New Roman, Bitstream Vera Serif, DejaVu Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Palatino, Charter, serif
