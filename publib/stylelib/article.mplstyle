@@ -11,7 +11,7 @@ legend.frameon: false
 
 axes.grid: true
 
-lines.markersize: 8.0
+lines.markersize: 7.0
 
 #axes.labelsize: 10
 #axes.titlesize: 12

@@ -111,7 +111,9 @@ Run the _test() routine in publib.py for more examples.
 
 ## Changes
 
-- 0.1.6 : default fonts to Times in article
+- 0.1.8 : fixed deprecation error messages
+
+- 0.1.7 : default fonts to Times in article
 
 - 0.1.6 : improve Readme
 

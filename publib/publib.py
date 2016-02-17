@@ -63,6 +63,16 @@ style_params={
     'B&W':{}
     }
     
+# Colors available for import
+colors = ['#5DA5DA',
+           '#FAA43A',
+           '#60BD68',
+           '#F17CB0',
+           '#B2912F',
+           '#B276B2',
+           '#DECF3F',
+           '#F15854',
+           '#4D4D4D']
 
 def set_style(style='basic',**kwargs):
     ''' Changes Matplotlib basic style to produce high quality graphs. Call 

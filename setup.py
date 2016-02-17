@@ -7,7 +7,7 @@ if os.path.exists('README.rst'):
     long_description = codecs.open('README.rst', encoding="utf-8").read()
         
 setup(name='publib',
-      version='0.1.7',
+      version='0.1.8',
       description='Produce publication-level quality images on top of Matplotlib',
     	long_description=long_description,
       url='https://github.com/erwanp/publib',
