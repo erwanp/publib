@@ -32,7 +32,7 @@ savefig.dpi: 300.0
 savefig.format: pdf
 savefig.frameon: true
 
-#text.usetex: true
+text.usetex: false
 
 xtick.direction: out
 xtick.major.pad: 4.0
@@ -64,7 +64,7 @@ ytick.labelsize: 16
 font.family         : sans-serif
 font.style          : normal
 font.variant        : normal
-font.weight         : medium
+font.weight         : normal
 font.stretch        : normal
 font.serif          : Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 font.sans-serif     : Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif

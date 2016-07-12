@@ -1,0 +1,24 @@
+# Author: Erwan Pannier 
+# A Matplotlib style to provide publication-level quality images
+# Note: this style should be imported on top of `default` style. 
+# Normally when importing plotlib default is imported automatically. 
+
+legend.frameon: false
+
+axes.labelsize: 24
+axes.titlesize: 28
+font.size: 24
+legend.fontsize: 24
+xtick.labelsize: 20
+ytick.labelsize: 20
+
+lines.markersize: 10
+
+figure.subplot.top: 0.82
+figure.subplot.bottom: 0.17
+figure.subplot.left: 0.20
+figure.subplot.right: 0.90
+
+font.family: Arial #serif
+font.sans-serif     : Helvetica, Arial, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Avant Garde, sans-serif
+font.serif: Times New Roman, Times, Bitstream Vera Serif, DejaVu Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Palatino, Charter, serif

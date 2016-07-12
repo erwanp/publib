@@ -1,7 +1,5 @@
 # Publib
 
-*Erwan Pannier - EM2C Laboratory, CentraleSupélec / CNRS UPR 288*
-
 ## Description
 
 Produce publication-level quality images on top of Matplotlib, with a 
@@ -119,4 +117,5 @@ Run the _test() routine in publib.py for more examples.
 
 - 0.1.5 : changed those buff_style functions in fix_style 
 
+*Erwan Pannier - EM2C Laboratory, CentraleSupélec / CNRS UPR 288*
 

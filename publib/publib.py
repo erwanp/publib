@@ -50,6 +50,7 @@ from warnings import warn
 style_params={
     'basic':{'clean_spines':True,
                'draggable_legend':True,
+               'draggable_text':True,
                'tight_layout':True,
                'labelpad':10,
                },
@@ -60,7 +61,8 @@ style_params={
                'spine_linewidth':0.5,
                },
     'poster':{},
-    'B&W':{}
+    'B&W':{},
+    'talk':{'clean_spines':False}
     }
     
 # Colors available for import
@@ -215,11 +217,16 @@ def _fix_style(styles,ax=None,**kwargs):
         minor_locatory = mpl.ticker.AutoMinorLocator(2)
         ax.yaxis.set_minor_locator(minor_locatory)
 
-    # Draggable legend:
+    # Render legend draggable:
     if params['draggable_legend']:
         l = ax.get_legend()
         if not l is None:
             l.draggable(True)
+            
+    if params['draggable_text']:
+        for t in ax.get_children():
+            if type(t) == mpl.text.Annotation:
+                t.draggable(True)
     
     return
 
