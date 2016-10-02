@@ -3,7 +3,7 @@
 ## Description
 
 Produce publication-level quality images on top of Matplotlib, with a 
-simple call to couple functions at the start and end of your script. 
+simple call to a couple functions at the start and end of your script. 
 
 [Project GitHub page](https://github.com/erwanp/publib)
 
