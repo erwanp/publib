@@ -9,7 +9,8 @@ simple call to couple functions at the start and end of your script.
 
 For similar librairies, see
 [seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
-add neat high-end API to Matplotlib function calls.
+add neat high-end API to Matplotlib function calls, and the Matplotlib 
+default [style feature](http://matplotlib.org/users/style_sheets.html)
 
 ## Install
 
@@ -108,6 +109,8 @@ Run the _test() routine in publib.py for more examples.
 
 
 ## Changes
+
+- 0.1.9: added talk and OriginPro style 
 
 - 0.1.8 : fixed deprecation error messages
 

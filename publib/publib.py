@@ -10,11 +10,11 @@ Matplotlib function calls.
 
 --------
 Use
+    
+    Call set_style() at the beginning of the script
+    Call fix_style() after each new axe is plotted
 
-Call set_style() at the beginning of the script
-Call fix_style() after each new axe is plotted
-
-Note that importing publib will already load the default style. 
+Note that importing publib will already load the basic style by default. 
 
 A couple more styles ('poster', 'article') can be selected with the function
 set_style()
@@ -32,7 +32,7 @@ Examples
     import matplotlib.pyplot as plt
     import publib
     a = np.linspace(0,6.28)
-    plt.plot(a,np.cos(a))   # plotted by publib 'default' style
+    plt.plot(a,np.cos(a))   # plotted by publib 'basic' style
     plt.show()
     
     publib.set_style('article')
@@ -41,6 +41,8 @@ Examples
     plt.show()
 
 """
+
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -62,7 +64,9 @@ style_params={
                },
     'poster':{},
     'B&W':{},
-    'talk':{'clean_spines':False}
+    'talk':{'clean_spines':False},
+    'origin':{'clean_spines':False,
+               },
     }
     
 # Colors available for import
@@ -84,7 +88,7 @@ def set_style(style='basic',**kwargs):
     Parameters
     ----------    
     style: string
-        'basic', 'article', 'poster', 'B&W'
+        'basic', 'article', 'poster', 'B&W', 'talk', 'origin'
     
     kwargs: dict of rcParams
         add Matplotlib rcParams    
@@ -124,12 +128,6 @@ def _set_style(style,**kwargs):
         
     return
 
-def buff_style(*args):
-    ''' Deprecated. Use fix_style '''
-    from warnings import warn
-    warn('buff_style deprecated. Please use fix_style')
-    return fix_style(*args)
-
 def fix_style(style='basic',ax=None,**kwargs):
     ''' 
     Add an extra formatting layer to an axe, that couldn't be changed directly 
@@ -141,7 +139,7 @@ def fix_style(style='basic',ax=None,**kwargs):
     ax: a matplotlib axe. 
         If None, the last axe generated is used 
     style: string or list of string
-        ['basic', 'article', 'poster', 'B&W'] 
+        ['basic', 'article', 'poster', 'B&W','talk','origin'] 
         one of the styles previously defined. It should match the style you 
         chose in set_style but nothing forces you to.
     kwargs: dict
@@ -341,6 +339,10 @@ def _test(**kwargs):
         set_style('poster',**{'lines.linewidth':5})
         example('poster',seed)
         fix_style('poster',**{'draggable_legend':False})
+
+        set_style(['origin'])
+        example('OriginPro',seed)
+        fix_style(['origin'])
 
         # Default plot 
         mpl.style.use('classic')
