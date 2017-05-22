@@ -19,7 +19,7 @@ setup(name='publib',
       packages=['publib'],
       install_requires=[
           'matplotlib>=1.4.1',
-          'numpy>=1.9.2', # for testing only. Should make this an optional requirement. 
+          'numpy', # for testing only. Should make this an optional requirement. 
 		  ],
       classifiers=[
         'Development Status :: 4 - Beta',
