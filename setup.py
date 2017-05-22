@@ -5,9 +5,11 @@ import codecs
 long_description = 'Convert a Python expression in a LaTeX formula'
 if os.path.exists('README.rst'):
     long_description = codecs.open('README.rst', encoding="utf-8").read()
-        
+
+__version__ = '0.1.10'
+    
 setup(name='publib',
-      version='0.1.9',
+      version=__version__,
       description='Produce publication-level quality images on top of Matplotlib',
     	long_description=long_description,
       url='https://github.com/erwanp/publib',

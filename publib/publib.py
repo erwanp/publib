@@ -47,6 +47,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import os
+from os.path import dirname, join
 from warnings import warn
 
 style_params={
@@ -117,8 +118,9 @@ def _set_style(style,**kwargs):
 
     if not os.path.exists(stl):
 #        avail = os.listdir()
-        ValueError('{0} is not a valid style. '.format(style)+
-                'Please pick a style from the list available:',style_params.keys())
+        raise ValueError('{0} is not a valid style. '.format(style)+
+                'Please pick a style from the following: {0}'.format(style_params.keys())+\
+                ' or add one in {0}'.format(dirname(stl)))
         return
         
     mpl.style.use(stl)
@@ -240,11 +242,11 @@ def _read_style(style):
 
 def _get_style(style):
     ''' Get absolute path of style file '''
-    return os.path.join(_get_lib(),'{0}.mplstyle'.format(style))
+    return join(_get_lib(),'{0}.mplstyle'.format(style))
 
 def _get_lib():
     ''' Get absolute path of styles '''
-    return os.path.join(os.path.dirname(os.path.realpath(__file__)),'stylelib')
+    return join(dirname(os.path.realpath(__file__)),'stylelib')
 
 # %% On start-up
 
