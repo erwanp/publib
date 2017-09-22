@@ -7,7 +7,7 @@ long_description = 'Produce publication-level quality images on top of Matplotli
 if os.path.exists('README.rst'):
     long_description = codecs.open('README.rst', encoding="utf-8").read()
 
-__version__ = '0.1.10'
+__version__ = '0.1.11'
     
 setup(name='publib',
       version=__version__,
@@ -20,7 +20,8 @@ setup(name='publib',
       packages=['publib'],
       install_requires=[
           'matplotlib>=1.4.1',
-          'numpy', # for testing only. Should make this an optional requirement. 
+           #'numpy', # for testing only. Should make this an optional requirement. 
+          'six', 
 		  ],
       classifiers=[
         'Development Status :: 4 - Beta',
@@ -29,7 +30,7 @@ setup(name='publib',
         'Topic :: Scientific/Engineering',
         'Topic :: Text Processing',
         'Programming Language :: Python',
-        #'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         "Operating System :: OS Independent"],

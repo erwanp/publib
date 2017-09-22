@@ -40,6 +40,17 @@ Examples
     publib.fix_style('article')
     plt.show()
 
+
+Known issues
+--------
+
+If fonts (ex: Times New Roman) appear to be bold, you may need Matplotlib to regenerate
+its font library cache (delete ~/.matplotlib/fontCache)
+
+See dedicated Stackoverflow:
+
+    https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold
+    
 """
 
 from __future__ import absolute_import, division, print_function, unicode_literals
@@ -49,6 +60,7 @@ import matplotlib as mpl
 import os
 from os.path import dirname, join
 from warnings import warn
+from six import string_types
 
 style_params = {
     'basic': {'clean_spines': True,
@@ -239,7 +251,7 @@ def _fix_style(styles, ax=None, **kwargs):
 def _read_style(style):
     ''' Deal with different style format (str, list, tuple)'''
 
-    if type(style) == str:
+    if isinstance(style, string_types):
         style = [style]
     else:
         style = list(style)
