@@ -2,7 +2,8 @@ import os
 from setuptools import setup
 import codecs
 
-long_description = 'Convert a Python expression in a LaTeX formula'
+long_description = 'Produce publication-level quality images on top of Matplotlib, '+\
+	'with a simple call to a couple functions at the start and end of your script.'
 if os.path.exists('README.rst'):
     long_description = codecs.open('README.rst', encoding="utf-8").read()
 
