@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/publib.svg)](https://badge.fury.io/py/publib)
+
 # Publib
 
 ## Description
