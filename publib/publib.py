@@ -160,7 +160,9 @@ def fix_style(style='basic', ax=None, **kwargs):
         one of the styles previously defined. It should match the style you 
         chose in set_style but nothing forces you to.
     kwargs: dict
-        edit any of the style_params keys. 
+        edit any of the style_params keys. ex:
+            
+        >>> tight_layout=False
 
     Examples
     --------
@@ -372,7 +374,7 @@ def _test(**kwargs):
         mpl.style.use('ggplot')
         example('ggplot', seed)
 
-    return None
+    return True
 
 if __name__ == '__main__':
     _test()

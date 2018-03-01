@@ -31,8 +31,7 @@ if os.path.exists('README.rst'):
     print('Readme generated')
     os.system('python setup.py sdist')
     os.system('python setup.py bdist_wheel --universal')
-    os.system("twine upload dist/{0}*.tar.gz".format(package_name))
-    os.system("twine upload dist/*whl")
+    os.system("twine upload dist/*")
     # Clean
     shutil.rmtree('dist')
     os.remove('README.rst')
