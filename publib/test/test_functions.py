@@ -44,7 +44,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(loc='upper left')
         plt.ylim((-1.5, 3.5))
-        plt.show()
+#        plt.show()
         return ax
 
     def example2(title, seed):
@@ -61,7 +61,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(loc='upper left')
         plt.ylim((-1.5, 3.5))
-        plt.show()
+#        plt.show()
         return ax
 
     def example3(title, seed):
@@ -78,8 +78,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(markerscale=1.3)
         plt.ylim((-1.5, 3.5))
-        plt.show()
-
+#        plt.show()
         return ax
 
     # %% Plot them
