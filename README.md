@@ -1,4 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/publib.svg)](https://badge.fury.io/py/publib)
+[![Tests](https://img.shields.io/travis/erwanp/publib.svg)](https://travis-ci.org/erwanp/publib)
+[![Code coverage](https://codecov.io/gh/erwanp/publib/branch/master/graph/badge.svg)](https://codecov.io/gh/erwanp/publib)
 
 # Publib
 
