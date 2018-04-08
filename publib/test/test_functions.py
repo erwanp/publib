@@ -27,6 +27,7 @@ def test_routines(**kwargs):
 
     import numpy as np
     import matplotlib.pyplot as plt
+    plt.ion()    # force interactive mode (so we're not stuck when run from terminal)
 
     # %% Examples
     def example1(title, seed):
