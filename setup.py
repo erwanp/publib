@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 import codecs
 
 long_description = 'Produce publication-level quality images on top of Matplotlib, '+\
@@ -7,7 +7,7 @@ long_description = 'Produce publication-level quality images on top of Matplotli
 if os.path.exists('README.rst'):
     long_description = codecs.open('README.rst', encoding="utf-8").read()
 
-__version__ = '0.1.13'
+__version__ = '0.2.1'
     
 setup(name='publib',
       version=__version__,
@@ -17,7 +17,7 @@ setup(name='publib',
       author='Erwan Pannier',
       author_email='erwan.pannier@gmail.com',
       license='CeCILL-2.1',
-      packages=['publib'],
+      packages=find_packages(),
       install_requires=[
           'matplotlib>=1.4.1',
            #'numpy', # for testing only. Should make this an optional requirement. 
