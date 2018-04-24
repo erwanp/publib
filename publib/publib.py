@@ -121,6 +121,7 @@ def set_style(style='basic', **kwargs):
     --------
     
     :func:`~publib.publib.fix_style`
+    :func:`~publib.tools.tools.reset`
 
     '''
 
@@ -183,6 +184,7 @@ def fix_style(style='basic', ax=None, **kwargs):
     --------
     
     :func:`~publib.publib.set_style`
+    :func:`~publib.tools.tools.reset`
 
     '''
 

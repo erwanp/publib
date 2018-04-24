@@ -8,6 +8,7 @@ Created on Sun Apr  8 18:26:37 2018
 from __future__ import absolute_import, print_function
 
 from publib import set_style, fix_style
+from publib.tools import reset, fix_bold_TimesNewRoman
 import matplotlib as mpl
 
 # %% Test routines
@@ -44,7 +45,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(loc='upper left')
         plt.ylim((-1.5, 3.5))
-#        plt.show()
+        plt.show()
         return ax
 
     def example2(title, seed):
@@ -61,7 +62,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(loc='upper left')
         plt.ylim((-1.5, 3.5))
-#        plt.show()
+        plt.show()
         return ax
 
     def example3(title, seed):
@@ -78,7 +79,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(markerscale=1.3)
         plt.ylim((-1.5, 3.5))
-#        plt.show()
+        plt.show()
         return ax
 
     # %% Plot them
@@ -120,5 +121,14 @@ def test_routines(**kwargs):
     return True
 
 
+
+def test_tools():
+    ''' Test publib tools are called properly '''
+    
+    reset()
+    
+    fix_bold_TimesNewRoman()
+
 if __name__ == '__main__':
     test_routines()
+    test_tools()
