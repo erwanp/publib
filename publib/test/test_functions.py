@@ -130,6 +130,10 @@ def test_tools():
     
     fix_bold_TimesNewRoman()
 
-if __name__ == '__main__':
+def run_testcases():
+    
     test_routines()
     test_tools()
+
+if __name__ == '__main__':
+    run_testcases()

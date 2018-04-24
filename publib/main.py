@@ -280,5 +280,5 @@ set_style('basic')        # whenever publib is imported
 
 
 if __name__ == '__main__':
-    from test.test_functions import test_routines
-    test_routines()
+    from test.test_functions import run_testcases
+    run_testcases()
