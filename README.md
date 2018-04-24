@@ -125,8 +125,15 @@ See for instance:
 - `publib.tools.fix_bold_TimesNewRoman`: fix Times New Roman font appearing bold. See 
 [StackOverflow](https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold)
 
+- `publib.tools.keep_color`, `publib.tools.get_color_cycle_state`: apply the same color 
+for the next graph to plot, see which color we're using. 
+```
+plt.plot(...)
+keep_color()
+plt.plot(...)
+```
 
-See [tools.py](https://github.com/erwanp/publib/blob/master/publib/tools/tools.py) 
+See [tools.py](https://github.com/erwanp/publib/blob/master/publib/tools/__init__.py) 
 for more details
 
 ## Changes
