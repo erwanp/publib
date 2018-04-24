@@ -7,7 +7,7 @@ long_description = 'Produce publication-level quality images on top of Matplotli
 if os.path.exists('README.rst'):
     long_description = codecs.open('README.rst', encoding="utf-8").read()
 
-__version__ = '0.2.1'
+__version__ = '0.2.2'
     
 setup(name='publib',
       version=__version__,

@@ -20,21 +20,3 @@ def reset():
     
     mpl.rcdefaults()
 
-
-def fix_bold_TimesNewRoman():
-    ''' For some reason when using Times New Roman it appears bold
-    This fixes it
-    
-    References
-    ----------
-    
-    https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold
-    
-    '''
-    
-    try:
-        del mpl.font_manager.weight_dict['roman']
-        mpl.font_manager._rebuild()
-    except KeyError:
-        pass
-

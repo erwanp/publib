@@ -3,4 +3,5 @@
 publib
 """
 
-from .tools import reset, fix_bold_TimesNewRoman
+from .tools import reset
+from .fix import fix_bold_TimesNewRoman

@@ -109,10 +109,29 @@ plt.savefig('publib_article.png')
 
 ![publib_article.png](https://github.com/erwanp/publib/blob/master/docs/publib_article.png)
 
-Run the _test() routine in publib.py for more examples. 
+Run the test() routines in `publib.test` for more examples. 
 
+
+## Tools
+
+The publib.tools module include independant functions to fix some common matplotlib bugs, 
+or include extra features. They're usually glanced from somewhere on the web. Proper  
+referencing is made in the function docstrings. 
+
+See for instance:
+
+- `publib.tools.reset`: reset Matplotlib defaults 
+
+- `publib.tools.fix_bold_TimesNewRoman`: fix Times New Roman font appearing bold. See 
+[StackOverflow](https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold)
+
+
+See [tools.py](https://github.com/erwanp/publib/blob/master/publib/tools/tools.py) 
+for more details
 
 ## Changes
+
+- 0.2.2: added tools
 
 - 0.1.9: added talk and OriginPro style 
 
