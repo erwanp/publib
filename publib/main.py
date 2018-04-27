@@ -86,18 +86,6 @@ style_params = {
                },
 }
 
-# Colors available for import
-colors = ['#5DA5DA',
-          '#FAA43A',
-          '#60BD68',
-          '#F17CB0',
-          '#B2912F',
-          '#B276B2',
-          '#DECF3F',
-          '#F15854',
-          '#4D4D4D']
-
-
 def set_style(style='basic', **kwargs):
     ''' Changes Matplotlib basic style to produce high quality graphs. Call 
     this function at the beginning of your script. You can even further improve
@@ -121,6 +109,7 @@ def set_style(style='basic', **kwargs):
     --------
     
     :func:`~publib.publib.fix_style`
+    :func:`~publib.tools.tools.reset`
 
     '''
 
@@ -183,6 +172,7 @@ def fix_style(style='basic', ax=None, **kwargs):
     --------
     
     :func:`~publib.publib.set_style`
+    :func:`~publib.tools.tools.reset`
 
     '''
 
@@ -290,5 +280,5 @@ set_style('basic')        # whenever publib is imported
 
 
 if __name__ == '__main__':
-    from test.test_functions import test_routines
-    test_routines()
+    from test.test_functions import run_testcases
+    run_testcases()

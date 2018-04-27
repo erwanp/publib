@@ -8,6 +8,8 @@ Created on Sun Apr  8 18:26:37 2018
 from __future__ import absolute_import, print_function
 
 from publib import set_style, fix_style
+from publib.tools.tools import reset
+from publib.tools.fix import fix_bold_TimesNewRoman
 import matplotlib as mpl
 
 # %% Test routines
@@ -27,7 +29,6 @@ def test_routines(**kwargs):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    plt.ion()    # force interactive mode (so we're not stuck when run from terminal)
 
     # %% Examples
     def example1(title, seed):
@@ -44,7 +45,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(loc='upper left')
         plt.ylim((-1.5, 3.5))
-#        plt.show()
+        plt.show()
         return ax
 
     def example2(title, seed):
@@ -61,7 +62,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(loc='upper left')
         plt.ylim((-1.5, 3.5))
-#        plt.show()
+        plt.show()
         return ax
 
     def example3(title, seed):
@@ -78,7 +79,7 @@ def test_routines(**kwargs):
         plt.title(title)
         plt.legend(markerscale=1.3)
         plt.ylim((-1.5, 3.5))
-#        plt.show()
+        plt.show()
         return ax
 
     # %% Plot them
@@ -89,6 +90,7 @@ def test_routines(**kwargs):
 
         seed = int(time.time())
         mpl.rcdefaults()
+        plt.ion()    # force interactive mode (so we're not stuck when run from terminal)
 
         set_style()
         example('basic', seed)
@@ -120,5 +122,18 @@ def test_routines(**kwargs):
     return True
 
 
-if __name__ == '__main__':
+
+def test_tools():
+    ''' Test publib tools are called properly '''
+    
+    reset()
+    
+    fix_bold_TimesNewRoman()
+
+def run_testcases():
+    
     test_routines()
+    test_tools()
+
+if __name__ == '__main__':
+    run_testcases()
