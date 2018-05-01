@@ -169,13 +169,4 @@ for more details
 
 - 0.1.9: added talk and OriginPro style 
 
-- 0.1.8 : fixed deprecation error messages
-
 - 0.1.7 : default fonts to Times in article
-
-- 0.1.6 : improve Readme
-
-- 0.1.5 : changed those buff_style functions in fix_style 
-
-*Erwan Pannier - EM2C Laboratory, CentraleSupélec / CNRS UPR 288*
-
