@@ -2,11 +2,13 @@ import os
 from setuptools import setup, find_packages
 import codecs
 from os.path import join, dirname
+from setuptips import yield_sphinx_only_markup
 
 long_description = 'Produce publication-level quality images on top of Matplotlib, '+\
 	'with a simple call to a couple functions at the start and end of your script.'
 if os.path.exists('README.rst'):
-    long_description = codecs.open('README.rst', encoding="utf-8").read()
+	readme_lines = codecs.open('README.rst', encoding="utf-8").readlines()
+	long_description = ''.join(yield_sphinx_only_markup(readme_lines))
 
 # Read version number from file
 with open(join(dirname(__file__),'publib', '__version__.txt')) as version_file:
@@ -21,6 +23,7 @@ setup(name='publib',
       author_email='erwan.pannier@gmail.com',
       license='CeCILL-2.1',
       packages=find_packages(),
+      keywords=["origin", "styles", "matplotlib"],
       install_requires=[
           'matplotlib>=1.4.1',
            #'numpy', # for testing only. Should make this an optional requirement. 
