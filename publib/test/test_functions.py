@@ -48,39 +48,39 @@ def test_routines(**kwargs):
         plt.show()
         return ax
 
-    def example2(title, seed):
-        np.random.seed(seed)
-        x = np.linspace(0, 5, 50)
-        y = np.cos(x)**2 + 1 * np.random.random(len(x))
-        yerr = np.std(y, axis=0)
-        plt.figure()
-        ax = plt.subplot()
-        ax.errorbar(x, y, yerr=yerr, fmt='o',
-                    label='new legends are draggable by default')
-        plt.xlabel(r'$x$')
-        plt.ylabel(r'$\cos^2 x$+noise')
-        plt.title(title)
-        plt.legend(loc='upper left')
-        plt.ylim((-1.5, 3.5))
-        plt.show()
-        return ax
-
-    def example3(title, seed):
-        np.random.seed(seed)
-        x = np.linspace(0, 5, 10)
-        y = np.cos(x)**2 + 0.1 * np.random.random(len(x))
-        yerr = np.std(y, axis=0)
-        plt.figure()
-        ax = plt.subplot()
-        ax.errorbar(x, y, yerr=yerr, marker='o', capsize=5,  # example of use of capsize
-                    label='scaled legend marker size')
-        plt.xlabel(r'$x$')
-        plt.ylabel(r'$\cos^2 x$+noise background')
-        plt.title(title)
-        plt.legend(markerscale=1.3)
-        plt.ylim((-1.5, 3.5))
-        plt.show()
-        return ax
+#    def example2(title, seed):
+#        np.random.seed(seed)
+#        x = np.linspace(0, 5, 50)
+#        y = np.cos(x)**2 + 1 * np.random.random(len(x))
+#        yerr = np.std(y, axis=0)
+#        plt.figure()
+#        ax = plt.subplot()
+#        ax.errorbar(x, y, yerr=yerr, fmt='o',
+#                    label='new legends are draggable by default')
+#        plt.xlabel(r'$x$')
+#        plt.ylabel(r'$\cos^2 x$+noise')
+#        plt.title(title)
+#        plt.legend(loc='upper left')
+#        plt.ylim((-1.5, 3.5))
+#        plt.show()
+#        return ax
+#
+#    def example3(title, seed):
+#        np.random.seed(seed)
+#        x = np.linspace(0, 5, 10)
+#        y = np.cos(x)**2 + 0.1 * np.random.random(len(x))
+#        yerr = np.std(y, axis=0)
+#        plt.figure()
+#        ax = plt.subplot()
+#        ax.errorbar(x, y, yerr=yerr, marker='o', capsize=5,  # example of use of capsize
+#                    label='scaled legend marker size')
+#        plt.xlabel(r'$x$')
+#        plt.ylabel(r'$\cos^2 x$+noise background')
+#        plt.title(title)
+#        plt.legend(markerscale=1.3)
+#        plt.ylim((-1.5, 3.5))
+#        plt.show()
+#        return ax
 
     # %% Plot them
     plt.close('all')

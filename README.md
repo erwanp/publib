@@ -109,6 +109,33 @@ plt.savefig('publib_article.png')
 
 ![publib_article.png](https://github.com/erwanp/publib/blob/master/docs/publib_article.png)
 
+The [OriginPro](https://www.originlab.com/Origin) style:
+
+```
+set_style('origin')
+
+...
+
+fix_style('origin')
+```
+
+![publib_origin.png](https://github.com/erwanp/publib/blob/master/docs/publib_origin.png)
+
+A combination of styles:
+
+```
+set_style(['poster', 'origin'])
+
+...
+
+fix_style(['poster', 'origin'])
+```
+
+![publib_poster_origin.png](https://github.com/erwanp/publib/blob/master/docs/publib_poster_origin.png)
+
+
+
+
 Run the test() routines in `publib.test` for more examples. 
 
 
@@ -125,8 +152,10 @@ See for instance:
 - `publib.tools.fix_bold_TimesNewRoman`: fix Times New Roman font appearing bold. See 
 [StackOverflow](https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold)
 
-- `publib.tools.keep_color`, `publib.tools.get_color_cycle_state`: apply the same color 
-for the next graph to plot, see which color we're using. 
+- `publib.tools.keep_color`: apply the same color for the next graph to plot
+
+- `publib.tools.get_next_color`: see which color will be applied next in the color cycle state
+
 ```
 plt.plot(...)
 keep_color()
@@ -142,13 +171,4 @@ for more details
 
 - 0.1.9: added talk and OriginPro style 
 
-- 0.1.8 : fixed deprecation error messages
-
 - 0.1.7 : default fonts to Times in article
-
-- 0.1.6 : improve Readme
-
-- 0.1.5 : changed those buff_style functions in fix_style 
-
-*Erwan Pannier - EM2C Laboratory, CentraleSupélec / CNRS UPR 288*
-

@@ -5,4 +5,4 @@ publib
 
 from .tools import reset
 from .fix import fix_bold_TimesNewRoman
-from .colors import colors, keep_color, get_color_cycle_state
+from .colors import colors, keep_color, get_next_color

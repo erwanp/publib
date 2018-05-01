@@ -45,15 +45,15 @@ def keep_color(ax=None):
         next(cycle)
 
 
-def get_color_cycle_state(ax=None, nonintrusive=False):
-    ''' Return the color cycle state. 
+def get_next_color(ax=None, nonintrusive=True):
+    ''' Return the next color to be used in the given color cycle. 
+    
     Warning: due to the structure of Python iterators I couldn't help but
-    iterate over all the cycle once. 
+    iterate over all the color cycle once. 
 
     If nonintrusive is True, then leave the color cycle in the same state as 
     before    
-
-    TODO: maybe implement my own cycle structure '''
+    '''
 
     if ax is None:
         ax = mpl.pyplot.gca()
@@ -64,7 +64,7 @@ def get_color_cycle_state(ax=None, nonintrusive=False):
     a = next(cycle)     # a is already the next one.
     while(a != next(cycle)):
         i += 1
-        color = a
+        color = a['color']
 
     if nonintrusive:
         # We want a-1 to show up on next call to next. So a-2 must be set now
