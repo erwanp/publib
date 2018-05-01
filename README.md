@@ -109,6 +109,33 @@ plt.savefig('publib_article.png')
 
 ![publib_article.png](https://github.com/erwanp/publib/blob/master/docs/publib_article.png)
 
+The [OriginPro](https://www.originlab.com/Origin) style:
+
+```
+set_style('origin')
+
+...
+
+fix_style('origin')
+```
+
+![publib_origin.png](https://github.com/erwanp/publib/blob/master/docs/publib_origin.png)
+
+A combination of styles:
+
+```
+set_style(['poster', 'origin'])
+
+...
+
+fix_style(['poster', 'origin'])
+```
+
+![publib_poster_origin.png](https://github.com/erwanp/publib/blob/master/docs/publib_poster_origin.png)
+
+
+
+
 Run the test() routines in `publib.test` for more examples. 
 
 
