@@ -11,10 +11,11 @@ simple call to a couple functions at the start and end of your script.
 
 [Project GitHub page](https://github.com/erwanp/publib)
 
-For similar librairies, see
-[seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
-add neat high-end API to Matplotlib function calls, and the Matplotlib 
-default [style feature](http://matplotlib.org/users/style_sheets.html)
+For similar librairies, see:
+- [seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
+add neat high-end API to Matplotlib function calls
+- the Matplotlib default [style feature](http://matplotlib.org/users/style_sheets.html)
+- [prettyplotlib](https://github.com/olgabot/prettyplotlib)
 
 ## Install
 
