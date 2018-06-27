@@ -173,3 +173,17 @@ for more details
 - 0.1.9: added talk and OriginPro style 
 
 - 0.1.7 : default fonts to Times in article
+
+## References
+
+Some other interesting packages to make nice graphs in Matplotlib. 
+
+Add new features:
+
+- [brokenaxes](https://github.com/bendichter/brokenaxes)
+- [matplotlib-tools](https://github.com/terranjp/matplotlib-tools): toolbar (ruler, etc.)
+
+Style based:
+
+- [seaborn](http://stanford.edu/~mwaskom/software/seaborn/)
+- [prettyplotlib](https://github.com/olgabot/prettyplotlib)
