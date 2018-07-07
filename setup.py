@@ -22,8 +22,10 @@ with open(join(dirname(__file__),'publib', '__version__.txt')) as version_file:
 
 def regenerate_fonts():
     print('Regenerating fonts')
-    from publib import regenerate_fonts
-    regenerate_fonts()
+#    from publib import regenerate_fonts
+#    regenerate_fonts()
+    import matplotlib
+    matplotlib.font_manager._rebuild()
     print('Fonts regenerated')
     
 
