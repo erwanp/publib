@@ -12,7 +12,7 @@ Created on Sun Apr  8 18:26:37 2018
 from __future__ import absolute_import, print_function
 
 from publib import set_style, fix_style
-from publib.tools.tools import reset
+from publib.tools.tools import reset_defaults, regenerate_fonts
 from publib.tools.fix import fix_bold_TimesNewRoman
 import matplotlib as mpl
 
@@ -130,7 +130,8 @@ def test_routines(**kwargs):
 def test_tools():
     ''' Test publib tools are called properly '''
     
-    reset()
+    regenerate_fonts
+    reset_defaults()
     
     fix_bold_TimesNewRoman()
 

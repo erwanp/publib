@@ -108,8 +108,9 @@ def set_style(style='basic', **kwargs):
     See Also
     --------
     
-    :func:`~publib.publib.fix_style`
-    :func:`~publib.tools.tools.reset`
+    :func:`~publib.publib.fix_style`,
+    :func:`~publib.tools.tools.reset_defaults`,
+    :func:`~publib.tools.tools.regenerate_fonts`
 
     '''
 
@@ -172,7 +173,7 @@ def fix_style(style='basic', ax=None, **kwargs):
     --------
     
     :func:`~publib.publib.set_style`
-    :func:`~publib.tools.tools.reset`
+    :func:`~publib.tools.tools.reset_defaults`
 
     '''
 

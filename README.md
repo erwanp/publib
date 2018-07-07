@@ -148,7 +148,9 @@ referencing is made in the function docstrings.
 
 See for instance:
 
-- `publib.tools.reset`: reset Matplotlib defaults 
+- `publib.tools.reset_defaults`: reset Matplotlib defaults 
+
+- `publib.tools.regenerate_fonts`: rebuild Matplotlib font cache
 
 - `publib.tools.fix_bold_TimesNewRoman`: fix Times New Roman font appearing bold. See 
 [StackOverflow](https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold)
