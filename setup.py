@@ -20,6 +20,13 @@ with open(join(dirname(__file__),'publib', '__version__.txt')) as version_file:
 # Reference: 
 # https://stackoverflow.com/questions/20288711/post-install-script-with-python-setuptools
 
+def regenerate_fonts():
+    print('Regenerating fonts')
+    from publib import regenerate_fonts
+    regenerate_fonts()
+    print('Fonts regenerated')
+    
+
 class PostDevelopCommand(develop):
     """Post-installation for development mode."""
     def run(self):
@@ -27,10 +34,7 @@ class PostDevelopCommand(develop):
         develop.run(self)
         
         # Post install:
-        print('Regenerating fonts')
-        from publib import regenerate_fonts
         regenerate_fonts()
-        print('Fonts regenerated')
 
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
@@ -39,10 +43,7 @@ class PostInstallCommand(install):
         install.run(self)
         
         # Post install:
-        print('Regenerating fonts')
-        from publib import regenerate_fonts
         regenerate_fonts()
-        print('Fonts regenerated')
 
 setup(name='publib',
       version=__version__,
