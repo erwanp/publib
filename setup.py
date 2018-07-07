@@ -1,7 +1,5 @@
 import os
 from setuptools import setup, find_packages
-from setuptools.command.develop import develop
-from setuptools.command.install import install
 import codecs
 from os.path import join, dirname
 from setuptips import yield_sphinx_only_markup
@@ -15,37 +13,6 @@ if os.path.exists('README.rst'):
 # Read version number from file
 with open(join(dirname(__file__),'publib', '__version__.txt')) as version_file:
     __version__ = version_file.read().strip()
-
-# Post install scripts
-# Reference: 
-# https://stackoverflow.com/questions/20288711/post-install-script-with-python-setuptools
-
-def regenerate_fonts():
-    print('Regenerating fonts')
-#    from publib import regenerate_fonts
-#    regenerate_fonts()
-    import matplotlib
-    matplotlib.font_manager._rebuild()
-    print('Fonts regenerated')
-    
-
-class PostDevelopCommand(develop):
-    """Post-installation for development mode."""
-    def run(self):
-        # Install:
-        develop.run(self)
-        
-        # Post install:
-        regenerate_fonts()
-
-class PostInstallCommand(install):
-    """Post-installation for installation mode."""
-    def run(self):
-        # Install:
-        install.run(self)
-        
-        # Post install:
-        regenerate_fonts()
 
 setup(name='publib',
       version=__version__,
@@ -73,9 +40,5 @@ setup(name='publib',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         "Operating System :: OS Independent"],
-      cmdclass={
-            'develop': PostDevelopCommand,
-            'install': PostInstallCommand,
-      },
 	  include_package_data=True,
       zip_safe=False)
