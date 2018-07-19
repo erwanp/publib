@@ -8,6 +8,7 @@ Created on Tue Apr 24 14:04:31 2018
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import matplotlib as mpl
+from publib.tools.tools import regenerate_fonts
 
 def fix_bold_TimesNewRoman():
     ''' For some reason when using Times New Roman it appears bold
@@ -22,7 +23,8 @@ def fix_bold_TimesNewRoman():
     
     try:
         del mpl.font_manager.weight_dict['roman']
-        mpl.font_manager._rebuild()
     except KeyError:
         pass
+    finally:
+        regenerate_fonts()
 

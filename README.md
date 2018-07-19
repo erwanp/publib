@@ -11,10 +11,11 @@ simple call to a couple functions at the start and end of your script.
 
 [Project GitHub page](https://github.com/erwanp/publib)
 
-For similar librairies, see
-[seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
-add neat high-end API to Matplotlib function calls, and the Matplotlib 
-default [style feature](http://matplotlib.org/users/style_sheets.html)
+For similar librairies, see:
+- [seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
+add neat high-end API to Matplotlib function calls
+- the Matplotlib default [style feature](http://matplotlib.org/users/style_sheets.html)
+- [prettyplotlib](https://github.com/olgabot/prettyplotlib)
 
 ## Install
 
@@ -147,7 +148,9 @@ referencing is made in the function docstrings.
 
 See for instance:
 
-- `publib.tools.reset`: reset Matplotlib defaults 
+- `publib.tools.reset_defaults`: reset Matplotlib defaults 
+
+- `publib.tools.regenerate_fonts`: rebuild Matplotlib font cache
 
 - `publib.tools.fix_bold_TimesNewRoman`: fix Times New Roman font appearing bold. See 
 [StackOverflow](https://stackoverflow.com/questions/33955900/matplotlib-times-new-roman-appears-bold)
@@ -172,3 +175,17 @@ for more details
 - 0.1.9: added talk and OriginPro style 
 
 - 0.1.7 : default fonts to Times in article
+
+## References
+
+Some other interesting packages to make nice graphs in Matplotlib. 
+
+Add new features:
+
+- [brokenaxes](https://github.com/bendichter/brokenaxes)
+- [matplotlib-tools](https://github.com/terranjp/matplotlib-tools): toolbar (ruler, etc.)
+
+Style based:
+
+- [seaborn](http://stanford.edu/~mwaskom/software/seaborn/)
+- [prettyplotlib](https://github.com/olgabot/prettyplotlib)
