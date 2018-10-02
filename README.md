@@ -189,3 +189,8 @@ Style based:
 
 - [seaborn](http://stanford.edu/~mwaskom/software/seaborn/)
 - [prettyplotlib](https://github.com/olgabot/prettyplotlib)
+
+Tips and demos of Matplotlib:
+
+- [A great cheatsheet](https://nbviewer.jupyter.org/urls/gist.githubusercontent.com/Jwink3101/e6b57eba3beca4b05ec146d9e38fc839/raw/f486ca3dcad44c33fc4e7ddedc1f83b82c02b492/Matplotlib_Cheatsheet)
+  by [Jwink3101](https://github.com/Jwink3101)
