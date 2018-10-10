@@ -245,7 +245,10 @@ def _fix_style(styles, ax=None, **kwargs):
     if params['draggable_legend']:
         l = ax.get_legend()
         if not l is None:
-            l.draggable(True)
+            try:
+                l.set_draggable(True)
+            except AttributeError: # Deprecated method
+                l.draggable(True)
 
     if params['draggable_text']:
         for t in ax.get_children():
