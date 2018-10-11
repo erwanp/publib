@@ -189,6 +189,7 @@ Style based:
 
 - [seaborn](http://stanford.edu/~mwaskom/software/seaborn/)
 - [prettyplotlib](https://github.com/olgabot/prettyplotlib)
+- [garrettj403](https://github.com/garrettj403)'s matplotlib styles for [ThesisPlot](https://github.com/garrettj403/ThesisPlots)
 
 Tips and demos of Matplotlib:
 
