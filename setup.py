@@ -25,7 +25,7 @@ setup(name='publib',
       packages=find_packages(),
       keywords=["origin", "styles", "matplotlib"],
       install_requires=[
-          #'matplotlib>=1.4.1',
+          'matplotlib>=1.4.1',
            #'numpy', # for testing only. Should make this an optional requirement. 
           'six', 
 		  ],
