@@ -3,7 +3,7 @@
 # Note: article should be built on top of default. When importing plotlib default is 
 # imported already. 
 
-axes.prop_cycle: cycler('color',['k', 'r', 'b', 'g'])								   
+axes.prop_cycle: cycler('color',['k', 'r', 'b', 'g', 'orange'])								   
 
 
 #figure.dpi: 72
