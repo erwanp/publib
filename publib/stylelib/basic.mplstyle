@@ -30,7 +30,6 @@ patch.facecolor: 0.75
 savefig.bbox: tight
 savefig.dpi: 300.0
 savefig.format: pdf
-savefig.frameon: true
 
 text.usetex: false
 
