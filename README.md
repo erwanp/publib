@@ -182,6 +182,7 @@ Some other interesting packages to make nice graphs in Matplotlib.
 
 Add new features:
 
+- [pypdfplot](https://github.com/dcmvdbekerom/pypdfplot): embed the script within the pdf. One single file for the figure and the code!
 - [brokenaxes](https://github.com/bendichter/brokenaxes)
 - [matplotlib-tools](https://github.com/terranjp/matplotlib-tools): toolbar (ruler, etc.)
 
