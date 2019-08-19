@@ -40,3 +40,14 @@ def regenerate_fonts():
     '''
     
     mpl.font_manager._rebuild()
+    
+def list_font_names():
+    ''' List ttf font names '''
+    
+    return sorted([f.name for f in mpl.font_manager.fontManager.ttflist])
+
+def list_font_files():
+    ''' List ttf font names '''
+    
+    return {f.name:f.fname for f in sorted(mpl.font_manager.fontManager.ttflist, 
+                                           key=lambda x: x.name)}
