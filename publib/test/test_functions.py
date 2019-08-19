@@ -100,9 +100,13 @@ def test_routines(**kwargs):
         example('basic', seed)
         fix_style()
 
+        plt.pause(0.01)
+
         set_style('article')
         example('article', seed)
         fix_style('article')
+
+        plt.pause(0.01)
 
 #        set_style(['article','B&W'])
 #        example('article',seed)
@@ -112,16 +116,30 @@ def test_routines(**kwargs):
         example('poster', seed)
         fix_style('poster', **{'draggable_legend': False})
 
+        plt.pause(0.01)
+
         set_style(['origin'])
         example('OriginPro', seed)
         fix_style(['origin'])
+        
+        plt.pause(0.01)
+
+        set_style(['origin', 'latex'])
+        example('OriginPro + latex', seed)
+        fix_style(['origin', 'latex'])
+        
+        plt.pause(0.01)
 
         # Default plot
         mpl.style.use('classic')
         example('matplotlib', seed)
 
+        plt.pause(0.01)
+
         mpl.style.use('ggplot')
         example('ggplot', seed)
+
+        plt.pause(0.01)
 
     return True
 
