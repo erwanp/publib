@@ -84,17 +84,18 @@ style_params = {
     'talk': {'clean_spines': False},
     'origin': {'clean_spines': False,
                },
+    'latex': {},
 }
 
 def set_style(style='basic', **kwargs):
     ''' Changes Matplotlib basic style to produce high quality graphs. Call 
     this function at the beginning of your script. You can even further improve
-    graphs with a call to fix_style at the end of your script.
+    graphs with a call to :py:func:`~publib.main.fix_style` at the end of your script.
 
     Parameters
     ----------    
     style: string
-        'basic', 'article', 'poster', 'B&W', 'talk', 'origin'
+        'basic', 'article', 'poster', 'B&W', 'talk', 'origin', 'latex'``
 
     kwargs: dict of rcParams
         add Matplotlib rcParams    
@@ -131,10 +132,11 @@ def _set_style(style, **kwargs):
 
     if not os.path.exists(stl):
 #        avail = os.listdir()
-        raise ValueError('{0} is not a valid style. '.format(style)+
-                'Please pick a style from the following: {0}'.format(style_params.keys())+\
-                ' or add one in {0}'.format(dirname(stl)))
-        return
+        avail = [f.replace('.mplstyle', '') for f in os.listdir(
+            _get_lib()) if f.endswith('.mplstyle')]
+        raise ValueError('{0} is not a valid style. '.format(stl) +
+                         'Please pick a style from the list available in ' +
+                         '{0}: {1}'.format(_get_lib(), avail))
 
     mpl.style.use(stl)
 
@@ -147,7 +149,7 @@ def _set_style(style, **kwargs):
 def fix_style(style='basic', ax=None, **kwargs):
     ''' 
     Add an extra formatting layer to an axe, that couldn't be changed directly 
-    in matplotlib.rcParams or with styles. Apply this function to every axe 
+    in ``matplotlib.rcParams`` or with styles. Apply this function to every axe 
     you created.
 
     Parameters
@@ -155,24 +157,28 @@ def fix_style(style='basic', ax=None, **kwargs):
     ax: a matplotlib axe. 
         If None, the last axe generated is used 
     style: string or list of string
-        ['basic', 'article', 'poster', 'B&W','talk','origin'] 
+        ``['basic', 'article', 'poster', 'B&W', 'talk', 'origin', 'latex']``
         one of the styles previously defined. It should match the style you 
         chose in set_style but nothing forces you to.
     kwargs: dict
-        edit any of the style_params keys. ex:
+        edit any of the style_params keys. ex::
             
         >>> tight_layout=False
 
     Examples
     --------
-    plb.set_style('poster')
-    plt.plot(a,np.cos(a))
-    plb.fix_style('poster',**{'draggable_legend':False})    
+    
+    ::
+        
+        from publib import set_style, fix_style
+        set_style('poster')
+        plt.plot(a,np.cos(a))
+        fix_style('poster',**{'draggable_legend':False})    
     
     See Also
     --------
     
-    :func:`~publib.publib.set_style`
+    :func:`~publib.publib.set_style`, 
     :func:`~publib.tools.tools.reset_defaults`
 
     '''
@@ -181,13 +187,10 @@ def fix_style(style='basic', ax=None, **kwargs):
 
     # Apply all styles
     for s in style:
-
         if not s in style_params.keys():
-            avail = [f.replace('.mplstyle', '') for f in os.listdir(
-                _get_lib()) if f.endswith('.mplstyle')]
-            raise ValueError('{0} is not a valid style. '.format(s) +
-                             'Please pick a style from the list available in ' +
-                             '{0}: {1}'.format(_get_lib(), avail))
+            raise ValueError('{0} is not a valid style. '.format(s)+
+                    'Please pick a style from the following: {0}. '.format(style_params.keys())+\
+                    'Or update `style_params` in publib.main.py')
 
     _fix_style(style, ax, **kwargs)
 
@@ -259,7 +262,14 @@ def _fix_style(styles, ax=None, **kwargs):
 
 
 def _read_style(style):
-    ''' Deal with different style format (str, list, tuple)'''
+    ''' Deal with different style format (str, list, tuple)
+    
+    Returns
+    -------
+    
+    style: list
+        list of styles
+    '''
 
     if isinstance(style, string_types):
         style = [style]

@@ -11,11 +11,7 @@ simple call to a couple functions at the start and end of your script.
 
 [Project GitHub page](https://github.com/erwanp/publib)
 
-For similar librairies, see:
-- [seaborn](http://stanford.edu/~mwaskom/software/seaborn/), which also
-add neat high-end API to Matplotlib function calls
-- the Matplotlib default [style feature](http://matplotlib.org/users/style_sheets.html)
-- [prettyplotlib](https://github.com/olgabot/prettyplotlib)
+For similar librairies, see the [References section](https://github.com/erwanp/publib#references). 
 
 ## Install
 
@@ -39,7 +35,7 @@ fix_style()
 
 Note that importing publib will already load the basic style.
 
-A few more styles ('poster', 'article', etc.) can be selected with the
+A few more styles (`'poster'`, `'article'`, etc.) can be selected with the
 function `set_style()`
 
 Because some matplotlib parameters cannot be changed before the lines
@@ -134,6 +130,19 @@ fix_style(['poster', 'origin'])
 
 ![publib_poster_origin.png](https://github.com/erwanp/publib/blob/master/docs/publib_poster_origin.png)
 
+Or, assuming you have the Latin Modern Math font installed: 
+
+```
+set_style(['origin', 'latex'])
+
+...
+
+fix_style(['origin', 'latex'])
+```
+
+![publib_origin_latex.png](https://github.com/erwanp/publib/blob/master/docs/publib_origin_latex.png)
+
+
 
 
 
@@ -165,6 +174,9 @@ keep_color()
 plt.plot(...)
 ```
 
+- `publib.tools.list_font_names`: to list all fonts available in Python. 
+
+
 See [tools.py](https://github.com/erwanp/publib/blob/master/publib/tools/__init__.py) 
 for more details
 
@@ -188,6 +200,7 @@ Add new features:
 
 Style based:
 
+- the Matplotlib default [style feature](http://matplotlib.org/users/style_sheets.html)
 - [seaborn](http://stanford.edu/~mwaskom/software/seaborn/)
 - [prettyplotlib](https://github.com/olgabot/prettyplotlib)
 - [garrettj403](https://github.com/garrettj403)'s matplotlib styles for [ThesisPlot](https://github.com/garrettj403/ThesisPlots)

@@ -1,0 +1,7 @@
+# Author: Erwan Pannier 
+# A Matplotlib style to provide publication-level quality images
+# Note: article should be built on top of default. When importing plotlib default is 
+# imported already. 
+
+font.family: Latin Modern Math
+mathtext.default: regular
