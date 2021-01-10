@@ -68,8 +68,8 @@ from six import string_types
 
 style_params = {
     'basic': {'clean_spines': True,
-              'draggable_legend': True,
-              'draggable_text': True,
+              'draggable_legend': False,
+              'draggable_text': False,
               'tight_layout': True,
               'labelpad': 10,
               },
