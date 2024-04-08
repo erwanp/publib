@@ -18,12 +18,12 @@ def test_keep_color(*args, **kwargs):
     plt.figure()
     plt.plot(0,1,'o')
     
-    current_color = get_next_color()
+    current_color = get_next_color(nonintrusive=True)
+    keep_color()
     
     plt.plot(1,1,'o')
     
-    keep_color()
-    assert get_next_color() == current_color
+    assert get_next_color(nonintrusive=True) == current_color
     
     
 
