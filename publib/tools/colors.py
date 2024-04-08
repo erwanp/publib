@@ -6,7 +6,7 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 # Colors available for import
 colors = ['#5DA5DA',
@@ -30,19 +30,30 @@ def keep_color(ax=None):
 
     Note: when setting color= it looks like the color cycle state is not called
 
-    TODO: maybe implement my own cycle structure '''
+    TODO: maybe implement my own cycle structure 
+    
+    .. warning::
+        only works if all colors in a cycle are unique
+    '''
 
     if ax is None:
-        ax = mpl.pyplot.gca()
+        ax = plt.gca()
 
     i = 1  # count number of elements
-    cycle = ax._get_lines.prop_cycler
-    a = next(cycle)     # a is already the next one.
-    while(a != next(cycle)):
+    next_color = ax._get_lines.get_next_color()
+    a = ax._get_lines.get_next_color()     # a is already the next next color.
+    # do a full cycle :
+    while(a != next_color):
         i += 1
+        a = ax._get_lines.get_next_color()
+    print("guessed that cycle has size ", i)
     # We want a-1 to show up on next call to next. So a-2 must be set now
     for j in range(i - 2):
-        next(cycle)
+        ax._get_lines.get_next_color()
+
+    print("Expected color is ", next_color)
+
+    return None
 
 
 def get_next_color(ax=None, nonintrusive=True):
@@ -53,22 +64,25 @@ def get_next_color(ax=None, nonintrusive=True):
 
     If nonintrusive is True, then leave the color cycle in the same state as 
     before    
+
+    .. warning::
+        only works if all colors in a cycle are unique
     '''
 
     if ax is None:
-        ax = mpl.pyplot.gca()
+        ax = plt.gca()
 
     i = 1  # count number of elements
-    cycle = ax._get_lines.prop_cycler  # color_cycle
-    color = None
-    a = next(cycle)     # a is already the next one.
-    while(a != next(cycle)):
+    next_color = ax._get_lines.get_next_color()
+    a = ax._get_lines.get_next_color()     # a is already the next next color.
+    # do a full cycle :
+    while(a != next_color):
         i += 1
-        color = a['color']
+        a = ax._get_lines.get_next_color()
 
     if nonintrusive:
         # We want a-1 to show up on next call to next. So a-2 must be set now
         for j in range(i - 1):
-            next(cycle)
+            ax._get_lines.get_next_color()
 
-    return color
+    return next_color
